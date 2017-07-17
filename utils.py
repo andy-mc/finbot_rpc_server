@@ -49,8 +49,11 @@ def finbot(user_message):
     if command.strip() == '/stock':
         stock_quote = stock_bot(stock)
 
-    if command.strip() == '/day_range':
+    elif command.strip() == '/day_range':
         stock_quote = day_range_stock_bot(stock)
+
+    else:
+        stock_quote = 'an error has ocurred - check your command'
 
     bot_response = {
         "username": "finbot",
