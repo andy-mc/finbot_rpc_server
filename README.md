@@ -1,54 +1,26 @@
-# Python code for RabbitMQ tutorials
-
-Here you can find Python code examples from [RabbitMQ
-tutorials](http://www.rabbitmq.com/getstarted.html).
-
-To successfully use the examples you will need a running RabbitMQ server.
+# finbot_rpc_server
+========================
 
 ## Requirements
 
-To run this code you need `pika` library version 0.10.0 To install it run
+To run finbot_rpc_server you'll need `pika` and other libraries,
+install the requirements using:
 
-    pip install pika==0.10.0
-
-You may first need to run
-
-    easy_install pip
+    pip install -r requirements.txt
 
 
-## Code
+## finbot_rpc_server
 
-[Tutorial one: "Hello World!"](http://www.rabbitmq.com/tutorial-one-python.html):
+finbot_rpc_server needs [rabbitMQ] up and running:
 
-    python send.py
-    python receive.py
+Instruction on how to install rabbitMQ here:
+    
+    https://www.rabbitmq.com/download.html
 
+Them to start rabbitMQ run:
+    
+    rabbitmq-server
 
-[Tutorial two: Work Queues](http://www.rabbitmq.com/tutorial-two-python.html):
+To finally start finbot_rpc_server run:
 
-    python new_task.py "A very hard task which takes two seconds.."
-    python worker.py
-
-
-[Tutorial three: Publish/Subscribe](http://www.rabbitmq.com/tutorial-three-python.html):
-
-    python receive_logs.py
-    python emit_log.py "info: This is the log message"
-
-
-[Tutorial four: Routing](http://www.rabbitmq.com/tutorial-four-python.html):
-
-    python receive_logs_direct.py info
-    python emit_log_direct.py info "The message"
-
-
-[Tutorial five: Topics](http://www.rabbitmq.com/tutorial-five-python.html):
-
-    python receive_logs_topic.py "*.rabbit"
-    python emit_log_topic.py red.rabbit Hello
-
-
-[Tutorial six: RPC](http://www.rabbitmq.com/tutorial-six-python.html):
-
-    python rpc_server.py
-    python rpc_client.py
+    python finbot_rpc_server.py
