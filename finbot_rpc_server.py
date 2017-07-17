@@ -22,7 +22,8 @@ def on_request(ch, method, props, body):
     ch.basic_publish(exchange='',
                      routing_key=props.reply_to,
                      properties=pika.BasicProperties(
-                         correlation_id=props.correlation_id),
+                         correlation_id=props.correlation_id,
+                         content_type='application/json'),
                      body=json.dumps(response))
     ch.basic_ack(delivery_tag=method.delivery_tag)
 
